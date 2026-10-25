@@ -1,0 +1,12 @@
+[Unit]
+Description=Linux ASUS / Generic Fan Speed Controller
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/fancontrol/fancontrol.py daemon
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
